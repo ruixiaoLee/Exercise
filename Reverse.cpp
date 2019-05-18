@@ -1,4 +1,8 @@
-int reverse(int x){
+#include <iostream>
+#include <climits>
+#include <string>
+using namespace std;
+int hell(int x){
   string ss = to_string(x);
   string ff;
   int size = ss.size();
@@ -30,17 +34,22 @@ int reverse(int x){
   else return (int)re;
 }
 
-//from leetcode
-int reverse(int x) {
-        long long int ans=0;
-        while(x!=0)
-        {
-            ans=(ans*10) +(x%10);
-            x/=10;
-            if(ans> INT_MAX)
-                return 0;
-            if(ans<INT_MIN)
-                return 0;
-        }
-        return ans;
-    }
+int reverse(int x){
+  long long int ans=0;
+  while(x!=0)
+  {
+      ans=(ans*10) +(x%10);
+      x/=10;
+      if(ans> INT_MAX)
+          return 0;
+      if(ans<INT_MIN)
+          return 0;
+  }
+  return ans;
+}
+int main(){
+  int x=-2147483648;
+  cout<<hell(x)<<endl;
+  cout<<reverse(x)<<endl;
+  return 0;
+}
