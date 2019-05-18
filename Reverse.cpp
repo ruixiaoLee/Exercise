@@ -33,7 +33,7 @@ int hell(int x){
   if(INT_MAX<re||re<INT_MIN) return 0;
   else return (int)re;
 }
-
+//from leetcode
 int reverse(int x){
   long long int ans=0;
   while(x!=0)
