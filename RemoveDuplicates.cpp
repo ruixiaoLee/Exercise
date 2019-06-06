@@ -3,7 +3,7 @@
 #include <vector>
 #include <iterator>
 using namespace std;
-
+//迭代器，对vector nums进行操作，相同元素抽出
 int removeDuplicates(vector<int>& nums) {
   if(nums.empty()) return 0;
   //if(nums.size()==1) return 1;
@@ -17,6 +17,7 @@ int removeDuplicates(vector<int>& nums) {
   }
   return nums.size();
 }
+//仅计算不同元素的个数
 int removeDuplicates2(vector<int>& nums) {
   if(nums.empty()) return 0;
   if(nums.size()==1) return 1;
@@ -28,6 +29,17 @@ int removeDuplicates2(vector<int>& nums) {
     newl++;
   }
   return newl;
+}
+
+//from leetcode
+//双指针，进行重新赋值
+int removeDuplicates3(vector<int>& nums) {
+  int i = 0, j = 0;
+  while(j < nums.size()){
+      while(j < nums.size() - 1 && nums[j] == nums[j + 1]) j++;
+      nums[i++] = nums[j++];
+  }
+  return i;
 }
 
 int main(void){
