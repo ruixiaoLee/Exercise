@@ -4,11 +4,11 @@
 using namespace std;
 
 int maxSubArray(vector<int>& nums) {
-    int dp=nums[0];
-    int sum=dp;
+    int dp=nums[0];//子串最大和
+    int sum=dp;//全局最大和
     for(int i=1 ; i<nums.size() ; i++){
-        dp=max(dp+nums[i], nums[i]);
-        sum=max(dp,sum);
+        dp=max(dp+nums[i], nums[i]);//如果dp加上下一个数字比dp大则更新dp
+        sum=max(dp,sum);//如果子串最大和比全局大则更新全局
     }
     return sum;
 }
